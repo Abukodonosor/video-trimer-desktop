@@ -1,4 +1,4 @@
-###This is program which allowe you to extract sound and video from your imported file.
+### This is program which allowe you to extract sound and video from your imported file.
 
 To run this pogram you need to:
 
