@@ -2,18 +2,105 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Hello World!</title>
+    <title>VimTrim</title>
+    <style>
+      #content{
+        width:700px;
+        text-align: center;
+      }
+      #video{
+        width: 500px;
+        height: 500px;
+        margin: auto;
+      }
+      body{
+        margin: 0px;
+        padding: 0px;
+        /* text-align: center; */
+      }
+      #load_new{
+        margin: 50px 50px;
+      }
+      options{
+        width: 100%;
+        height:400px;
+        display: inline-block;
+      }
+      .options_left{
+        display: inline-block;
+        width:320px;
+        height: 120px;
+        padding:10px;
+        border-right:4px solid darkslategray;
+      }
+      .options_right{
+        width:230px;
+        height: 120px;
+        display: inline-block;
+        vertical-align:top;
+        padding:15px;
+      }
+      #start-time{
+        width:65px;
+        
+      }
+      #end-time{
+        width:65px;
+      }
+
+      #loader{
+        width:40px;
+        height: 40px;
+        margin: 10px auto;
+        border-radius: 100px;
+        background:rebeccapurple;
+      }
+      #message{
+        font-size:12px;
+      }
+    </style>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    <!-- All of the Node.js APIs are available in this renderer process. -->
+    <div id="content">
+        <h1> ~ ~Video trimer~ ~</h1>
+        <h4>info: all paths and filenames need to be without whitespaces!</h4>
+        <input class="new_file" type="file"/>
+        <div id="video_main">
+            <!-- <video  src="./videos/videoplayback.mp4" type="video/mp4"  controls autoplay></video> -->
+            <video class="real_video"  src= "/home/magic/Desktop/ajde/ffmpeg/bin/videoplayback.mp4" type="video/mp4"  controls autoplay></video>
+
+        </div>
+        <div class="options">
+          <div class="options_left">
+            <p>If you wish to extract audio and video output from your file, check those checkboxes!</p>
+            <input class='checkbox' type="checkbox" name="video" value="true"> Video <br>
+            <input class='checkbox' type="checkbox" name="audio" value="true" checked> Audio<br>
+          </div>
+          <div class="options_right">
+            <div class="options_right-top">
+                start time:<input name="start-time" class='input-fields-time' id="start-time" type="text" value="00:03:12" /><br/>
+                end time:<input name="end-time" class='input-fields-time' id="end-time" type="text" value="00:03:42" /><br/>
+            </div>
+            <div class="options_right-bottom">
+               <button id='akcione'>Extract</button> 
+               <div id='loader'></div>
+               <p id="message">Here will be displayed message when job is done</p>
+            </div>
+         
+          </div>
+          
+        </div>
+    </div>
+
+    
+    <!-- All of the Node.js APIs are available in this renderer process. 
     We are using Node.js <script>document.write(process.versions.node)</script>,
     Chromium <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
+    and Electron <script>document.write(process.versions.electron)</script>.-->
 
     <script>
       // You can also require other files to run in this process
-      require('./renderer.js')
+      require('./src/renderer/renderer.js')
     </script>
   </body>
 </html>
