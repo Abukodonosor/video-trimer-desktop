@@ -11,4 +11,4 @@ command if you want to make it is: electron-packager ./ TrimVim --platform=linux
 
 ps: "If you want to use this program, pls put attention on folder and file names. Program work only with names without  white spaces ' '!!!".
 
-(DEMO project)
+(POC project)
